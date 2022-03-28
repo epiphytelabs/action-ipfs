@@ -1,0 +1,15 @@
+name: Publish to IPFS
+description: Publish to IPFS
+branding:
+  icon: upload-cloud
+  color: green
+inputs:
+  path:
+    description: Path to publish
+    required: true
+outputs:
+  cid:
+    description: IPFS CID
+runs:
+  using: node16
+  main: index.js
