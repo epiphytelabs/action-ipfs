@@ -7,6 +7,12 @@ inputs:
   path:
     description: Path to publish
     required: true
+  host:
+    description: IPFS hostname
+    default: ipfs.infura.io
+  port:
+    description: IPFS port
+    default: 5001
 outputs:
   cid:
     description: IPFS CID
