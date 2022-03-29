@@ -14,7 +14,7 @@ inputs:
   port:
     description: IPFS port
     required: false
-    default: "5001"
+    default: "443"
   protocol:
     description: IPFS protocol
     required: false
