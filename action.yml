@@ -9,10 +9,16 @@ inputs:
     required: true
   host:
     description: IPFS hostname
-    default: ipfs.infura.io
+    required: false
+    default: ipfs.epiphytelabs.io
   port:
     description: IPFS port
-    default: 5001
+    required: false
+    default: "5001"
+  protocol:
+    description: IPFS protocol
+    required: false
+    default: http
 outputs:
   cid:
     description: IPFS CID
