@@ -18,7 +18,7 @@ inputs:
   protocol:
     description: IPFS protocol
     required: false
-    default: http
+    default: https
 outputs:
   cid:
     description: IPFS CID
