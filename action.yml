@@ -7,10 +7,13 @@ inputs:
   path:
     description: Path to publish
     required: true
+  auth:
+    description: IPFS authentication
+    required: false
   host:
     description: IPFS hostname
     required: false
-    default: ipfs.epiphytelabs.io
+    default: ipfs.epiphyte.cloud
   port:
     description: IPFS port
     required: false
