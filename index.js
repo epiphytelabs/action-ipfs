@@ -22,7 +22,7 @@ async function main() {
 
 		const path = core.getInput("path");
 		const files = globSource(path, "**/*");
-		const result = await last(ipfs.addAll(files, { pin: true }));
+		const result = await last(ipfs.addAll(files, { pin: true, wrapWithDirectory: true }));
 		const cid = result.cid.toString();
 
 		core.info("Published: " + cid);
