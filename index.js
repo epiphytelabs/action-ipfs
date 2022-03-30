@@ -24,9 +24,8 @@ async function main() {
 		const result = await ipfs.add(files, { pin: true });
 		const cid = result.cid.toString();
 
-		core.setOutput("cid", cid);
-
 		console.log("Published", cid);
+		core.setOutput("cid", cid);
 	} catch (error) {
 		core.setFailed(error.message);
 		throw error;
