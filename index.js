@@ -1,5 +1,6 @@
 const core = require("@actions/core");
 const { create, globSource } = require("ipfs-http-client");
+const last = require("it-last");
 
 async function main() {
 	try {
@@ -20,16 +21,14 @@ async function main() {
 		const ipfs = create(options);
 
 		const path = core.getInput("path");
-		const files = globSource(path, { recursive: true });
-		const result = await ipfs.add(files, { pin: true }).error((error) => console.log("error", error));
-		console.log("result", result);
+		const files = globSource(path, "**/*");
+		const result = await last(ipfs.addAll(files, { pin: true }));
 		const cid = result.cid.toString();
 
-		console.log("Published", cid);
+		core.info("Published: " + cid);
 		core.setOutput("cid", cid);
 	} catch (error) {
 		core.setFailed(error.message);
-		throw error;
 	}
 }
 
