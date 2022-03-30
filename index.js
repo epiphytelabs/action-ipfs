@@ -25,6 +25,7 @@ async function main() {
 		const cid = result.cid.toString();
 
 		core.setOutput("cid", cid);
+		console.log("cid", cid);
 
 		console.log("Published", cid);
 	} catch (error) {
