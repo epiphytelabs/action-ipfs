@@ -21,7 +21,7 @@ async function main() {
 
 		const path = core.getInput("path");
 		const files = globSource(path, { recursive: true });
-		const result = await ipfs.add(files, { pin: true });
+		const result = await ipfs.add(files, { pin: true }).error((error) => console.log("error", error));
 		console.log("result", result);
 		const cid = result.cid.toString();
 
