@@ -4,12 +4,12 @@ branding:
   icon: upload-cloud
   color: green
 inputs:
-  path:
-    description: Path to publish
-    required: true
   auth:
     description: IPFS authentication
     required: false
+  path:
+    description: Path to publish
+    required: true
   host:
     description: IPFS hostname
     required: false
